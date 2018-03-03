@@ -20,6 +20,12 @@ public class Trainer extends User implements Serializable {
 	public Trainer() {
 		super();
 	}   
+	
+	public Trainer(String name, String login, String password, String email, String speciality) {
+		super(name, login, password, email);
+		this.speciality = speciality;
+	}
+
 	public String getSpeciality() {
 		return this.speciality;
 	}

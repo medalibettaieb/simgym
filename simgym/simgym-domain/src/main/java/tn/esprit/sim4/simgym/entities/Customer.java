@@ -19,6 +19,14 @@ public class Customer extends User implements Serializable {
 	public Customer() {
 		super();
 	}
+	
+
+	public Customer(String name, String login, String password, String email, UserGender userGender, int age) {
+		super(name, login, password, email);
+		this.userGender = userGender;
+		this.age = age;
+	}
+
 
 	public UserGender getUserGender() {
 		return userGender;
