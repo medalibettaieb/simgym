@@ -14,13 +14,17 @@ import javax.persistence.OneToMany;
 @Entity
 public class User implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4854752119676165990L;
 	/** serialVersionUID */
-	private static final long serialVersionUID = 1L;
+	
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "USR_CODE")
-	private Long code;
+	private int code;
 	@Column(name = "USR_NAME")
 	private String name;
 	@Column(name = "USR_LOGIN")
@@ -30,7 +34,7 @@ public class User implements Serializable {
 	@Column(name = "USR_EMAIL")
 	private String email;
 
-	@ManyToMany(mappedBy="usersSubscribedIn")
+	@ManyToMany(mappedBy = "usersSubscribedIn")
 	private List<Session> sessionsSubscribedIn;
 
 	@OneToMany(mappedBy = "trainer")
@@ -38,18 +42,18 @@ public class User implements Serializable {
 
 	@OneToMany(mappedBy = "user")
 	private List<ActivityDetail> activityDetails;
-	
+
 	@OneToMany(mappedBy = "trainer")
 	private List<ActivityDetail> activityDetailsByCoach;
-	
-	@OneToMany(mappedBy="user")
+
+	@OneToMany(mappedBy = "user")
 	private List<SubscriptionDetail> subscriptionDetails;
 
-	public Long getCode() {
+	public int getCode() {
 		return code;
 	}
 
-	public void setCode(Long code) {
+	public void setCode(int code) {
 		this.code = code;
 	}
 

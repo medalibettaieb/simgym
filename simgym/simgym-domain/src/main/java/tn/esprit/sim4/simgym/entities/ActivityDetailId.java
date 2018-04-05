@@ -13,25 +13,25 @@ public class ActivityDetailId implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private Long code;
+	private int code;
 	private int idActivity;
 	private Date dateOfCreation;
 
 	public ActivityDetailId() {
 	}
 
-	public ActivityDetailId(Long code, int idActivity) {
+	public ActivityDetailId(int code, int idActivity) {
 		super();
 		this.code = code;
 		this.idActivity = idActivity;
-		this.dateOfCreation=new Date();
+		this.dateOfCreation = new Date();
 	}
 
-	public Long getCode() {
+	public int getCode() {
 		return code;
 	}
 
-	public void setCode(Long code) {
+	public void setCode(int code) {
 		this.code = code;
 	}
 
@@ -55,7 +55,7 @@ public class ActivityDetailId implements Serializable {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((code == null) ? 0 : code.hashCode());
+		result = prime * result + code;
 		result = prime * result + ((dateOfCreation == null) ? 0 : dateOfCreation.hashCode());
 		result = prime * result + idActivity;
 		return result;
@@ -70,10 +70,7 @@ public class ActivityDetailId implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		ActivityDetailId other = (ActivityDetailId) obj;
-		if (code == null) {
-			if (other.code != null)
-				return false;
-		} else if (!code.equals(other.code))
+		if (code != other.code)
 			return false;
 		if (dateOfCreation == null) {
 			if (other.dateOfCreation != null)
