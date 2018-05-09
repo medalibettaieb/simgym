@@ -10,17 +10,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 @Entity
-public class User implements Serializable {
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -4854752119676165990L;
-	/** serialVersionUID */
-	
-
+@Table(name="T_USER")
+public class User implements Serializable{
+	private static final long serialVersionUID = 6529685098267757690L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "USR_CODE")
@@ -139,6 +134,10 @@ public class User implements Serializable {
 
 	public void setSubscriptionDetails(List<SubscriptionDetail> subscriptionDetails) {
 		this.subscriptionDetails = subscriptionDetails;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 
 }

@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.ejb.Remote;
 
+import tn.esprit.sim4.simgym.entities.Trainer;
 import tn.esprit.sim4.simgym.entities.User;
 
 @Remote
@@ -19,4 +20,6 @@ public interface HumainRessourceServiceRemote {
 	User findUserById(int id);
 
 	List<User> findAllUsers();
+
+	Trainer findTrainerById(int id);
 }

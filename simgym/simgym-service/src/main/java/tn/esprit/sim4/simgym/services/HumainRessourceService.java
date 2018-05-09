@@ -6,6 +6,7 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import tn.esprit.sim4.simgym.entities.Trainer;
 import tn.esprit.sim4.simgym.entities.User;
 
 /**
@@ -51,5 +52,11 @@ public class HumainRessourceService implements HumainRessourceServiceRemote, Hum
 	public List<User> findAllUsers() {
 		return entityManager.createQuery("SELECT u FROM User u", User.class).getResultList();
 	}
+	
+	@Override
+	public Trainer findTrainerById(int id) {
+		return entityManager.find(Trainer.class, id);
+	}
+
 
 }
